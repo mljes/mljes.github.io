@@ -1,1 +1,142 @@
-Hello World
+<!doctype html>
+<html lang="en" style="background-color: blue">
+    <head>
+        <meta charset="UTF-8">
+
+        <title>Upgrader</title>
+        <meta
+            name="description"
+            content="Calculates UPick upgrade prices per seat">
+        <meta
+            name="author"
+            content="MLJ">
+
+        <!--
+            Change log:
+                10. August 2017  - created!
+        -->
+
+        <style>
+          input {
+            font-style: italic;
+          }
+        </style>
+
+    </head>
+
+    <body>
+        <div id="inputTable">
+            <table>
+                <tbody style="text-align: center">
+                    <tr>
+                        <td>Enter UPick type:</td>
+                    </tr>
+                    <tr>
+                        <td><input id="upickTypeID" placeholder="numbers only, please" autocomplete='off'></td>
+                    </tr>
+                    <tr>
+                        <td>Upgrading from...</td>
+                    </tr>
+                    <tr>
+                        <td><input id="origPriceTypeID" placeholder="price type letter" autocomplete='off'></td>
+                    </tr>
+                    <tr>
+                        <td>...to...</td>
+                    </tr>
+                    <tr>
+                        <td><input id="upgradePriceTypeID" placeholder="price type letter" autocomplete='off'></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input id="discountID" placeholder="leave off % sign (enter 1 for none)" autocomplete='off'>
+                      </td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" id="calculateButton">Go</button></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="resultBox"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+
+            var upickType;
+            var origPriceType;
+            var upgradePriceType;
+            var divisor = 0;
+            //Sets of price tiers
+            var u4 = {"A+":252.00,"A":237.60,"B":187.20,"C":108.00};
+            var u6 = {"A+":357.00,"A":336.60,"B":265.20,"C":153.00};
+            var u8 = {"A+":448.00,"A":422.40,"B":332.80,"C":192.00};
+            var u10 = {"A+":560.00,"A":528.00,"B":416.00,"C":240.00}
+            var prices = new Object();
+
+            var mainProcedure = function() {
+                upickType = document.getElementById("upickTypeID").value;
+
+                //get proper dictionary in place
+                if (upickType==4){
+                  prices = u4;
+                }
+                else if (upickType==6){
+                  prices = u6;
+                }
+                else if (upickType==8){
+                  prices = u8;
+                }
+                else if (upickType==10){
+                  prices = u10;
+                }
+
+                origPriceType = document.getElementById("origPriceTypeID").value;
+                upgradePriceType = document.getElementById("upgradePriceTypeID").value;
+
+                //capitalize letters for searching through Dictionary
+                origPriceType = convertPriceTypeToCapital(origPriceType);
+                upgradePriceType = convertPriceTypeToCapital(upgradePriceType);
+
+                discount = document.getElementById("discountID").value;
+
+                //get a nice decimal for dividing later (and eliminate div. by 0)
+                if (discount==0){
+                  divisor = 1.0;
+                }
+                else if (discount==50) {
+                  divisor = 0.5;
+                }
+                else if (discount==25) {
+                  divisor = 0.75;
+                }
+
+                var old = (prices[origPriceType]/(upickType/divisor));
+                var upgrade = (prices[upgradePriceType]/(upickType/divisor));
+
+                document.getElementById('resultBox').innerHTML = ("Difference of $" + (upgrade-old));
+            }
+
+            var convertPriceTypeToCapital = function(priceType) {
+              if (priceType=="a+"){
+                priceType="A+";
+              }
+              else if (priceType=="a"){
+                priceType="A";
+              }
+              else if (priceType=="b"){
+                priceType="B";
+              }
+              else if (priceType=="c"){
+                priceType="C";
+              }
+
+              return priceType;
+            }
+            document.getElementById('calculateButton').onclick = mainProcedure;
+
+        </script>
+    </body>
+</html>
