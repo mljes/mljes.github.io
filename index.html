@@ -24,9 +24,7 @@
           body {
             font-family: "Calibri";
           }
-          .row {
-            min-height: 10%;
-          }
+
         </style>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
@@ -34,7 +32,7 @@
 
     <body>
       <div class="container-fluid">
-        <div class="text-center"><h1>UPick Seat Price Upgrader</h1></div>
+        <div class="text-center"><h1 style="font-style: italic">UPick Seat Price Upgrader</h1></div>
         <!--<div class="col-lg-4">-->
           <div class="row justify-content-center">
             <!--left column-->
@@ -85,29 +83,36 @@
             <!--right column-->
             <div class="col-lg-4 col-xs-1 col-sm-1"></div>
           </div>
+
           <div class="row justify-content-center">
             <!--left column-->
             <div class="col-lg-4 col-xs-1 col-sm-1"></div>
-            <div class="col-lg-4 col-xs-10 col-sm-10">
-              <div class="btn-group">
+            <!--<div class="col-lg-4 col-xs-10 col-sm-10">-->
+              <div class="btn-group btn-group-justify" role="group" aria-label="Justified button group">
                <button type="button" class="btn btn-primary" id="button50" onclick="setDiscountAmount(50)">50% off</button>
                <button type="button" class="btn btn-primary" id="button25" onclick = "setDiscountAmount(25)">25% off</button>
                <button type="button" class="btn btn-primary" id="buttonNone" onclick = "setDiscountAmount(0)">None</button>
-              </div>
+              <!--</div>-->
             </div>
             <!--right column-->
             <div class="col-lg-4 col-xs-1 col-sm-1"></div>
           </div>
+
           <div class="row justify-content-center">
             <!--left column-->
             <div class="col-lg-4 col-xs-1 col-sm-1"></div>
-            <div class="col-lg-4 col-xs-10 col-sm-10">
-              <button type="button" id="calculateButton" class="btn btn-default" disabled>Calculate</button>
+            <!--<div class="col-lg-4 col-xs-10 col-sm-10">-->
+              <div class="btn-group btn-group-justify" role="group" aria-label="Justified button group">
+               <button type="button" class="btn btn-default" id="addOneButton" onclick="">+1</button>
+               <button type="button" id="calculateButton" class="btn btn-default" disabled>Calculate</button>
+               <button type="button" class="btn btn-default" id="jokePlease" onclick = "">Need a joke...</button>
+              <!--</div>-->
             </div>
             <!--right column-->
             <div class="col-lg-4 col-xs-1 col-sm-1"></div>
+
           </div>
-          <div class="row justify-content-center">
+          <div class="row justify-content-center text-center">
             <!--left column-->
             <div class="col-lg-4 col-xs-1 col-sm-1"></div>
             <div class="col-lg-4 col-xs-10 col-sm-10" id="resultBox"></div>
@@ -165,7 +170,7 @@
 
             var setDiscountAmount = function(discountAmt) {
               console.log("inside of setDiscountAmount");
-              document.getElementById('calculateButton').className = "btn btn-primary";
+              document.getElementById('calculateButton').className = "btn btn-success";
 
               document.getElementById('calculateButton').disabled = false;
               console.log("BENCHMARK");
