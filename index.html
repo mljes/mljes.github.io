@@ -33,80 +33,81 @@
 
 
         <!--center column-->
-        <!--<div class="col-sm-4">-->
+        <!--<div class="col-lg-4">-->
           <div class="row">
             <!--left column-->
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">Enter UPick type:</div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">Enter UPick type:</div>
             <!--right column-->
-            <div class="col-sm-3"></div>
+            <div class="col-lg-4"></div>
           </div>
 
           <div class="row">
             <!--left column-->
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6"><input id="upickTypeID" placeholder="numbers only, please" autocomplete="off"></div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"><input class="form-control" id="upickTypeID" placeholder="numbers only, please" autocomplete="off"></div>
             <!--right column-->
-            <div class="col-sm-3"></div>
+            <div class="col-lg-4"></div>
           </div>
           <div class="row">
             <!--left column-->
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">Upgrading from...</div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">Upgrading from...</div>
             <!--right column-->
-            <div class="col-sm-3"></div>
+            <div class="col-lg-4"></div>
           </div>
           <div class="row">
             <!--left column-->
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6"><input id="origPriceTypeID" placeholder="price type letter" autocomplete='off'></div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"><input class="form-control" id="origPriceTypeID" placeholder="price type letter" autocomplete='off'></div>
             <!--right column-->
-            <div class="col-sm-3"></div>
+            <div class="col-lg-4"></div>
           </div>
           <div class="row">
             <!--left column-->
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">...to...</div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">...to...</div>
             <!--right column-->
-            <div class="col-sm-3"></div>
+            <div class="col-lg-4"></div>
           </div>
           <div class="row">
             <!--left column-->
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6"><input id="upgradePriceTypeID" placeholder="price type letter" autocomplete='off'></div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"><input class="form-control" id="upgradePriceTypeID" placeholder="price type letter" autocomplete='off'></div>
             <!--right column-->
-            <div class="col-sm-3"></div>
+            <div class="col-lg-4"></div>
           </div>
           <div class="row">
             <!--left column-->
-            <div class="col-sm-3"></div>
-            <div class="btn-group">
-             <button type="button" class="btn btn-primary" id="button50" onclick="setDiscountAmount(50)">50% off</button>
-             <button type="button" class="btn btn-primary" id="button25" onclick = "setDiscountAmount(25)">25% off</button>
-             <button type="button" class="btn btn-primary" id="buttonNone" onclick = "setDiscountAmount(0)">None</button>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+              <div class="btn-group">
+               <button type="button" class="btn btn-primary" id="button50" onclick="setDiscountAmount(50)">50% off</button>
+               <button type="button" class="btn btn-primary" id="button25" onclick = "setDiscountAmount(25)">25% off</button>
+               <button type="button" class="btn btn-primary" id="buttonNone" onclick = "setDiscountAmount(0)">None</button>
+              </div>
             </div>
             <!--right column-->
-            <div class="col-sm-3"></div>
+            <div class="col-lg-4"></div>
           </div>
           <div class="row">
             <!--left column-->
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6"><button type="button" id="calculateButton" class="btn btn-default" disabled>Calculate</button></div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"><button type="button" id="calculateButton" class="btn btn-default" disabled>Calculate</button></div>
             <!--right column-->
-            <div class="col-sm-3"></div>
+            <div class="col-lg-4"></div>
           </div>
           <div class="row">
             <!--left column-->
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6" id="resultBox"></div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4" id="resultBox"></div>
             <!--right column-->
-            <div class="col-sm-3"></div>
+            <div class="col-lg-4"></div>
           </div>
         </div>
 
 
         <script>
-
             var upickType;
             var origPriceType;
             var upgradePriceType;
@@ -209,7 +210,7 @@
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/ulg/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
     </body>
