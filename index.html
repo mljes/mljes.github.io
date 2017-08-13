@@ -40,8 +40,14 @@
 				url('PriscilliaScript.svg#PriscilliaScript') format('svg');
 			}
 		</style>
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
 
 	<body>
@@ -56,7 +62,7 @@
 			<div class="row row-m-t justify-content-center">
 			<!--left column-->
 				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
-				<div class="col-lg-4 col-xs-10 col-sm-10 text-center"><h3>Enter UPick type:</h3></div>
+				<div class="col-lg-4 col-xs-10 col-sm-10 text-center"><h4>Enter UPick type:</h4></div>
 				<!--right column-->
 				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
 			</div>
@@ -76,7 +82,7 @@
 			<div class="row row-m-t justify-content-center">
 				<!--left column-->
 				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
-				<div class="col-lg-4 col-xs-10 col-sm-10 text-center"><h3>Upgrading from...</h3></div>
+				<div class="col-lg-4 col-xs-10 col-sm-10 text-center"><h4>Upgrading from...</h4></div>
 				<!--right column-->
 				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
 			</div>
@@ -96,7 +102,7 @@
 			<div class="row row-m-t justify-content-center">
 				<!--left column-->
 				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
-				<div class="col-lg-4 col-xs-10 col-sm-10 text-center"><h3>...to...</h3></div>
+				<div class="col-lg-4 col-xs-10 col-sm-10 text-center"><h4>...to...</h4></div>
 				<!--right column-->
 				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
 			</div>
@@ -112,7 +118,7 @@
 				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
 			</div>
 
-			<!--** FIRST ROW BUTTONS **-->
+			<!--** BUTTONS **-->
 			<div class="row row-m-t">
 				<!--left column-->
 				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
@@ -127,8 +133,20 @@
 						<div class="btn-group" role="group">
 							<button type="button" class="btn btn-primary" id="buttonNone" onclick = "setDiscountAmount(0)">None</button>
 						</div>
+					</div>
+				</div>
+				
+				<!--right column-->
+				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
+			</div>
+			
+			<div class="row row-m-t">
+				<!--left column-->
+				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
+				<div class="col-lg-4 col-xs-10 col-sm-10">
+					<div class="btn-group btn-group-justified" role="group">
 						<div class="btn-group" role="group">
-							<button type="button" class="btn btn-default" id="calculateButton" disabled>Calculate</button>
+							<button type="button" class="btn btn-default" id="calculateButton" disabled>Go</button>
 						</div>
 						<div class="btn-group" role="group">
 							<button type="button" class="btn btn-default" id="addOneButton" onclick="location.href='testPage.html';">+1</button>
@@ -139,12 +157,16 @@
 				<!--right column-->
 				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
 			</div>
+			
 
 			<!--** RESULT TEXT **-->
 			<div class="row row-m-t justify-content-center">
 				<!--left column-->
 				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
-				<div class="col-lg-4 col-xs-10 col-sm-10" id="resultBox"></div>
+				<div class="col-lg-4 col-xs-10 col-sm-10">
+					<div class="well" id="resultBox">
+					</div>
+				</div>
 				<!--right column-->
 				<div class="col-lg-4 col-xs-1 col-sm-1 text-center"></div>
 			</div>
@@ -246,11 +268,5 @@
 			//Run the calculate function on button press (mainProcedure)
 			document.getElementById('calculateButton').onclick = mainProcedure;
 		</script>
-		
-		<!-- Optional JavaScript -->
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/ulg/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 	</body>
 </html>
