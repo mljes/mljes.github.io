@@ -46,6 +46,12 @@
 			  border-color: #ff7583;
 			}
 			
+			.btn-primary-salmon:hover {
+			  color: #fff;
+			  background-color: #ff3B4f;
+			  border-color: #ff3B4f;
+			}
+			
 			@font-face {
 				font-family: "Priscillia";
 				src: url("PriscilliaScript.otf"),
@@ -206,7 +212,7 @@
 				document.getElementById('calculateButton').disabled = true;
 				document.getElementById('resultBox').style.display = "block";
 				document.getElementById('addOneButton').disabled = false;
-				document.getElementById('addOneButton').className = "btn btn-primary-salmon";
+				document.getElementById('addOneButton').className = "btn btn-primary-salmon btn-primary-salmon:hover";
 				
 				document.getElementById('button50').disabled = true;
 				document.getElementById('button50').className = "btn btn-default";
