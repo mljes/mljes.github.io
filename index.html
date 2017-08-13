@@ -32,6 +32,14 @@
 				background: url("memphis-colorful.png")
 				repeat;
 			}
+			#resultBox {
+				display: none;
+			}
+			.btn-primary-purple {
+			  color: #fff;
+			  background-color: #cc66ff;
+			  border-color: #cc66ff;
+			}
 			@font-face {
 				font-family: "Priscillia";
 				src: url("PriscilliaScript.otf"),
@@ -149,7 +157,7 @@
 							<button type="button" class="btn btn-default" id="calculateButton" disabled>Go</button>
 						</div>
 						<div class="btn-group" role="group">
-							<button type="button" class="btn btn-default" id="addOneButton" onclick="location.href='testPage.html';">+1</button>
+							<button type="button" class="btn btn-default" id="addOneButton" onclick="addASeat()" disabled>+1 seat</button>
 						</div>
 					</div>
 				</div>
@@ -183,10 +191,26 @@
 			var u8 = {"A+":448.00,"A":422.40,"B":332.80,"C":192.00};
 			var u10 = {"A+":560.00,"A":528.00,"B":416.00,"C":240.00}
 			var prices = new Object();
-
+			var newPrice;
+			var origPrice;
+			
 			var mainProcedure = function() {
 				upickType = document.getElementById("upickTypeID").value;
-
+				
+				document.getElementById('calculateButton').disabled = true;
+				document.getElementById('resultBox').style.display = "block";
+				document.getElementById('addOneButton').disabled = false;
+				document.getElementById('addOneButton').className = "btn btn-primary-purple";
+				
+				document.getElementById('button50').disabled = true;
+				document.getElementById('button50').className = "btn btn-default";
+				
+				document.getElementById('button25').disabled = true;
+				document.getElementById('button25').className = "btn btn-default";
+				
+				document.getElementById('buttonNone').disabled = true;
+				document.getElementById('buttonNone').className = "btn btn-default";
+				
 				//get proper dictionary in place
 				if (upickType==4){
 					prices = u4;
@@ -212,27 +236,22 @@
 				var old = (prices[origPriceType]/(upickType/divisor));
 				var upgrade = (prices[upgradePriceType]/(upickType/divisor));
 
-				//upgrade-old
-				document.getElementById('resultBox').innerHTML = ("Difference of $" + (parseFloat(upgrade-old).toFixed(2)));
+				newPrice = upgrade-old;
+				document.getElementById('resultBox').innerHTML = ("Difference of $" + (parseFloat(newPrice).toFixed(2)));
+				origSum = newPrice;
+			}
+			
+			var addASeat = function() {
+				console.log("addASeat");
+				newPrice = newPrice + origSum;
+				document.getElementById('resultBox').innerHTML = ("Difference of $" + ((parseFloat(newPrice).toFixed(2))));
 			}
 
 			var setDiscountAmount = function(discountAmt) {
 				console.log("inside of setDiscountAmount");
 				document.getElementById('calculateButton').className = "btn btn-success";
-
 				document.getElementById('calculateButton').disabled = false;
-				console.log("BENCHMARK");
-				document.getElementById('button50').disabled = true;
-
-
-				document.getElementById('button50').className = "btn btn-default";
-				document.getElementById('button25').disabled = true;
-
-				document.getElementById('button25').className = "btn btn-default";
-				document.getElementById('buttonNone').disabled = true;
-
-				document.getElementById('buttonNone').className = "btn btn-default";
-				
+		
 				//get a nice decimal for dividing later (and eliminate div. by 0)
 				if (discountAmt==0){
 					divisor = 1.0;
