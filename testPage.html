@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
 
-        <title>Upgrader</title>
+        <title>TESTER</title>
         <meta
             name="description"
             content="Calculates UPick upgrade prices per seat">
@@ -19,6 +19,7 @@
         <style>
 			input {
 				font-style: italic;
+				text-align: center;
 				min-height: 10%;
 			}
 			body {
@@ -26,11 +27,6 @@
 			}
 			.row-m-t{
 				margin-top : .2%;
-			}
-			body {
-				margin: 0;
-				background: url("memphis-colorful.png")
-				repeat;
 			}
 			@font-face {
 				font-family: "Priscillia";
@@ -44,109 +40,50 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	</head>
 
-	<body>
+	<body style="background-color: red;">
 		<div class="container" style="color: light-blue">
 			<!--** TITLE **-->
 			<div class="text-center">
 				<h4>&nbsp;</h4>
 				<h1 style="font-family: Priscillia">UPick Seat Price Upgrader</h1>
 			</div>
-
-			<!--** FIRST LINE OF TEXT **-->
-			<div class="row row-m-t justify-content-center">
-			<!--left column-->
-				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
-				<div class="col-lg-4 col-xs-10 col-sm-10 text-center"><h3>Enter UPick type:</h3></div>
-				<!--right column-->
-				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
-			</div>
-
-			<!--** FIRST INPUT BOX **-->
-			<div class="row row-m-t justify-content-center">
-				<!--left column-->
+			
+			<div class="row text-center">
 				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
 				<div class="col-lg-4 col-xs-10 col-sm-10">
-					<input type="number" class="form-control hidden-xs hidden-sm input-lg" id="upickTypeID" placeholder="numbers only, please" autocomplete="off">
+					<form>
+						<div class="form-group">
+							<label for="number">Enter UPick type:</label>
+							<input type="number" class="form-control" placeholder="numbers only, please" id=""></input>
+						</div>
+						<div class="form-group">
+							<label for="letter">Upgrading from...</label>
+							<input type="letter" class="form-control" placeholder="price type letter" id=""></input>
+						</div>
+						<div class="form-group">
+							<label for="number">...to...</label>
+							<input type="letter" class="form-control" placeholder="price type letter" id=""></input>
+						</div>
+						<div class="btn-group btn-group-justified" role="group">
+							<div class="btn-group" role="group">
+								<button type="button" class="btn btn-primary btn-md" id="button50" onclick="setDiscountAmount(50)">50% off</button>
+							</div>
+							<div class="btn-group" role="group">
+								<button type="button" class="btn btn-primary btn-md" id="button25" onclick = "setDiscountAmount(25)">25% off</button>
+							</div>
+							<div class="btn-group" role="group">
+								<button type="button" class="btn btn-primary btn-md" id="buttonNone" onclick = "setDiscountAmount(0)">None</button>
+							</div>
+							<div class="btn-group" role="group">
+								<button type="button" class="btn btn-default btn-md" id="calculateButton" disabled>Calculate</button>
+							</div>
+							<div class="btn-group" role="group">
+								<button type="button" class="btn btn-default btn-md" id="addOneButton" disabled>+1</button>
+							</div>
+						</div>
+					</form>
 				</div>
-				<!--right column-->
 				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
-			</div>
-
-			<!--** SECOND LINE OF TEXT **-->
-			<div class="row row-m-t justify-content-center">
-				<!--left column-->
-				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
-				<div class="col-lg-4 col-xs-10 col-sm-10 text-center"><h3>Upgrading from...</h3></div>
-				<!--right column-->
-				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
-			</div>
-
-			<!--** SECOND INPUT BOX **-->
-			<div class="row row-m-t justify-content-center">
-				<!--left column-->
-				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
-				<div class="col-lg-4 col-xs-10 col-sm-10">
-					<input type="letter" class="form-control hidden-xs hidden-sm input-lg" id="origPriceTypeID" placeholder="price type letter" autocomplete='off'>
-				</div>
-				<!--right column-->
-				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
-			</div>
-
-			<!--** THIRD LINE OF TEXT **-->
-			<div class="row row-m-t justify-content-center">
-				<!--left column-->
-				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
-				<div class="col-lg-4 col-xs-10 col-sm-10 text-center"><h3>...to...</h3></div>
-				<!--right column-->
-				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
-			</div>
-
-			<!--** THIRD INPUT BOX **-->
-			<div class="row row-m-t justify-content-center">
-				<!--left column-->
-				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
-				<div class="col-lg-4 col-xs-10 col-sm-10">
-					<input type="letter" class="form-control hidden-xs hidden-sm input-lg" id="upgradePriceTypeID" placeholder="price type letter" autocomplete='off'>
-				</div>
-				<!--right column-->
-				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
-			</div>
-
-			<!--** FIRST ROW BUTTONS **-->
-			<div class="row row-m-t">
-				<!--left column-->
-				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
-				<div class="col-lg-4 col-xs-10 col-sm-10">
-					<div class="btn-group btn-group-justified" role="group">
-						<div class="btn-group" role="group">
-							<button type="button" class="btn btn-primary" id="button50" onclick="setDiscountAmount(50)">50% off</button>
-						</div>
-						<div class="btn-group" role="group">
-							<button type="button" class="btn btn-primary" id="button25" onclick = "setDiscountAmount(25)">25% off</button>
-						</div>
-						<div class="btn-group" role="group">
-							<button type="button" class="btn btn-primary" id="buttonNone" onclick = "setDiscountAmount(0)">None</button>
-						</div>
-						<div class="btn-group" role="group">
-							<button type="button" class="btn btn-default" id="calculateButton" disabled>Calculate</button>
-						</div>
-						<div class="btn-group" role="group">
-							<button type="button" class="btn btn-default" id="addOneButton" onclick="location.href='testPage.html';">+1</button>
-						</div>
-					</div>
-				</div>
-				
-				<!--right column-->
-				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
-			</div>
-
-			<!--** RESULT TEXT **-->
-			<div class="row row-m-t justify-content-center">
-				<!--left column-->
-				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
-				<div class="col-lg-4 col-xs-10 col-sm-10" id="resultBox"></div>
-				<!--right column-->
-				<div class="col-lg-4 col-xs-1 col-sm-1 text-center"></div>
 			</div>
 		</div>
 
