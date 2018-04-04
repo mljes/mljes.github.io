@@ -17,14 +17,9 @@ var countdown = function(start){
 //change value in mainbox for each timer interval
 var decrement = function(){
   console.log("in decrement");
-        
-  if (flip==1) {
-    document.getElementById("forBG").style.backgroundColor = randomColor();
-  }
-
+  
   if (count>0){ //keep counting down
     console.log(count);
-    flip = 0;
     document.getElementById("mainbox").innerHTML = count;
     count--;
   }
@@ -32,8 +27,7 @@ var decrement = function(){
     console.log("reached 0");
     document.getElementById("mainbox").innerHTML = count;
     count = 20;
-    flip = 1;
-    //document.getElementById("forBG").style.backgroundColor = randomColor();
+    document.getElementById("forBG").style.backgroundColor = randomColor();
   }
 }
 
