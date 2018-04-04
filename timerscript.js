@@ -1,10 +1,14 @@
 var count = 0;
 var timer;
-
+var currColor = "33BCFF";
+var flip = false;
 
 //begin counting down from inputted start value
 var countdown = function(start){
-  count = start;
+  if (flip) {
+		document.getElementById("forBG").style.backgroundColor = randomColor();
+	}
+	count = start;
 
   //change button function to stop timer
   document.getElementById("button1").innerHTML = "STOP";
@@ -26,7 +30,8 @@ var decrement = function(){
     console.log("reached 0");
     document.getElementById("mainbox").innerHTML = count;
     count = 20;
-    document.getElementById("forBG").style.backgroundColor = randomColor();
+		flip = true;
+    //document.getElementById("forBG").style.backgroundColor = randomColor();
   }
 }
 
