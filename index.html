@@ -15,8 +15,8 @@
             Change log:
                 10. August 2017  - created!
         -->
-
-        <style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <style>
 			input {
 				font-style: italic;
 				min-height: 10%;
@@ -71,7 +71,7 @@
 	</head>
 
 	<body>
-		<div class="container" style="color: light-blue">
+<!--		<div class="container"> -->
 			<!--** TITLE **-->
 			<div class="text-center">
 				<h4>&nbsp;</h4>
@@ -79,7 +79,7 @@
 			</div>
 
 			<!--** FIRST LINE OF TEXT **-->
-			<div class="row row-m-t justify-content-center">
+			<div class="row justify-content-center">
 			<!--left column-->
 				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
 				<div class="col-lg-4 col-xs-10 col-sm-10 text-center"><h4>Select UPick type:</h4></div>
@@ -88,10 +88,11 @@
 			</div>
 
 			<!--** FIRST ROW BUTTONS **-->
-      <div class="row row-m-t">
+      <div class="row">
         <!--left column-->
-        <div class="col-lg-4 col-xs-1 col-sm-1"></div>
-        <div class="col-lg-4 col-xs-10 col-sm-10">
+        <!--<div class="col-lg-4 col-xs-1 col-sm-1"></div>-->
+        <div class="col-sm-1 col-lg"></div>
+        <div class="col-sm-10 col-lg">
           <div class="btn-group btn-group-justified" role="group">
             <div class="btn-group" role="group">
               <button type="button" class="btn btn-primary" id="upickType4" onclick="setUpickType(4)">UPick 4</button>
@@ -107,10 +108,11 @@
             </div>
           </div>
         </div>
+        <div class="col-sm-1 col-lg"></div>
       </div>
 
 			<!--** CHECKBOXES **-->
-      <div class="row row-m-t">
+      <div class="row">
         <!--left column-->
         <div class="col-lg-4 col-xs-1 col-sm-1"></div>
         <div class="col-lg-2 col-xs-5 col-sm-5 text-center">
@@ -152,10 +154,10 @@
       </div>
 
 			<!--** DISCOUNT/SURCHARGE BUTTONS **-->
-			<div class="row row-m-t">
+			<div class="row">
 				<!--left column-->
-				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
-				<div class="col-lg-4 col-xs-10 col-sm-10">
+				<div class="col-sm-1 col-lg"></div>
+				<div class="col-sm-10 col-lg">
 					<div class="btn-group btn-group-justified" role="group">
             <div class="btn-group" role="group">
 							<button type="button" class="btn btn-primary" id="button0" onclick = "setDiscountAmount(0)">None</button>
@@ -170,13 +172,13 @@
 				</div>
 
 				<!--right column-->
-				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
+				<div class="col-sm-1 col-lg"></div>
 			</div>
 
-			<div class="row row-m-t">
+			<div class="row">
 				<!--left column-->
-				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
-				<div class="col-lg-4 col-xs-10 col-sm-10">
+				<div class="col-sm-1 col-lg"></div>
+				<div class="col-sm-10 col-lg">
 					<div class="btn-group btn-group-justified" role="group">
 						<div class="btn-group" role="group">
 							<button type="button" class="btn btn-default" id="calculateButton" onclick="calculationProcedure()" disabled>Go</button>
@@ -188,12 +190,12 @@
 				</div>
 
 				<!--right column-->
-				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
+				<div class="col-sm-1 col-lg"></div>
 			</div>
 
 
 			<!--** RESULT TEXT **-->
-			<div class="row row-m-t justify-content-center">
+			<div class="row justify-content-center">
 				<!--left column-->
 				<div class="col-lg-4 col-xs-1 col-sm-1"></div>
 				<div class="col-lg-4 col-xs-10 col-sm-10">
@@ -203,7 +205,7 @@
 				<!--right column-->
 				<div class="col-lg-4 col-xs-1 col-sm-1 text-center"></div>
 			</div>
-		</div>
+<!--		</div> -->
 
 		<script>
 			var origPriceType;
@@ -280,8 +282,6 @@
             console.log("new price calculated");
             document.getElementById('resultBox').innerHTML = (result);
           }
-
-
         }
       }
 
@@ -401,5 +401,8 @@
 				}
 			}
 		</script>
-	</body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
 </html>
