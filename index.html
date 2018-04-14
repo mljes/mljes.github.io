@@ -164,7 +164,7 @@
 							<button type="button" class="btn btn-primary" id="button25" onclick = "setDiscountAmount(25)">25% off</button>
 						</div>
 						<div class="btn-group" role="group">
-							<button type="button" class="btn btn-primary" id="buttonNone" onclick = "setDiscountAmount(0)">None</button>
+							<button type="button" class="btn btn-primary" id="button0" onclick = "setDiscountAmount(0)">None</button>
 						</div>
 					</div>
 				</div>
@@ -179,7 +179,7 @@
 				<div class="col-lg-4 col-xs-10 col-sm-10">
 					<div class="btn-group btn-group-justified" role="group">
 						<div class="btn-group" role="group">
-							<button type="button" class="btn btn-default" id="calculateButton" onclickdisabled>Go</button>
+							<button type="button" class="btn btn-default" id="calculateButton" onclick="calculationProcedure()" disabled>Go</button>
 						</div>
 						<div class="btn-group" role="group">
 							<button type="button" class="btn btn-default" id="addOneButton" onclick="addASeat()" disabled>+1 seat</button>
@@ -222,6 +222,8 @@
       var prices = new Object();
 			var newPrice;
 			var origPrice;
+      var difference;
+      var upickNumeric;
 
 			var mainProcedure = function() {
 				//change buttons
@@ -236,29 +238,53 @@
 				document.getElementById('button25').disabled = true;
 				document.getElementById('button25').className = "btn btn-default";
 
-				document.getElementById('buttonNone').disabled = true;
-				document.getElementById('buttonNone').className = "btn btn-default";
+				document.getElementById('button0').disabled = true;
+				document.getElementById('button0').className = "btn btn-default";
 			}
 
       var calculationProcedure = function() {
-        console.log("in calculationProcedure");
-        setPriceType();
-
-        origPrice = prices[origPriceType];
-        newPrice = prices[newPriceType];
-
-        if(document.getElementById("newAisle").checked){
-          newPrice += 4*upickNumeric;
+        if (!checkInputs()) {
+          console.log("need to select price type");
+          document.getElementById("resultBox").innerHTML = "Don't forget the price type!";
+          document.getElementById("resultBox").style.display = "flex";
         }
-        if(document.getElementById("origAisle").checked){
-          origPrice += 4*upickNumeric;
+        else {
+          console.log("in calculationProcedure");
+          setPriceType();
+
+          origPrice = prices[origPriceType];
+          newPrice = prices[newPriceType];
+
+          if(document.getElementById("newAisle").checked){
+            newPrice += 4*upickNumeric;
+          }
+          if(document.getElementById("origAisle").checked){
+            origPrice += 4*upickNumeric;
+          }
+
+          console.log("Old: " + origPrice + " New: " + newPrice);
+
+          difference = (divisor*(newPrice-origPrice))/upickNumeric;
+
+          document.getElementById('resultBox').style.display = "flex";
+          document.getElementById('resultBox').innerHTML = ("Difference of $" + ((parseFloat(difference).toFixed(2))));
+        }
+      }
+
+      var checkInputs = function() {
+        if (!document.getElementById("origA").checked &&
+            !document.getElementById("origB").checked &&
+            !document.getElementById("origC").checked) {
+              return false;
         }
 
-        console.log("Old: " + origPrice + " New: " + newPrice);
+        if (!document.getElementById("newA").checked &&
+            !document.getElementById("newB").checked &&
+            !document.getElementById("newC").checked) {
+              return false;
+        }
 
-        document.getElementById('resultBox').style.display = "flex";
-        document.getElementById('resultBox').innerHTML = ("Difference of $" + ((parseFloat(newPrice-origPrice).toFixed(2))));
-
+        return true;
 
       }
 
@@ -301,17 +327,26 @@
 			var setUpickType = function(value) {
         upickNumeric = value;
         //get proper dictionary in place
+        document.getElementById("upickType" + value).disabled = true;
+
+        for (i=4; i<=10; i+=2){
+          if (i!=value){
+            console.log("i=" + i);
+            document.getElementById("upickType" + i).disabled = false;
+          }
+        }
+
 				if (value==4){
 					prices = u4;
 				}
 				else if (value==6){
-					prices = u6;
+          prices = u6;
 				}
 				else if (value==8){
-					prices = u8;
+          prices = u8;
 				}
 				else if (value==10){
-					prices = u10;
+          prices = u10;
 				}
 
         console.log("Upick:" + value);
@@ -319,14 +354,23 @@
 
 			var addASeat = function() {
 				console.log("addASeat");
-				newPrice = newPrice + origSum;
-				document.getElementById('resultBox').innerHTML = ("Difference of $" + ((parseFloat(newPrice).toFixed(2))));
+        difference += difference;
+				document.getElementById('resultBox').innerHTML = ("Difference of $" + ((parseFloat(difference).toFixed(2))));
 			}
 
 			var setDiscountAmount = function(discountAmt) {
 				console.log("inside of setDiscountAmount");
 				document.getElementById('calculateButton').className = "btn btn-success";
 				document.getElementById('calculateButton').disabled = false;
+
+        document.getElementById("button" + discountAmt).disabled = true;
+
+        for (i=0; i<=50; i+=25){
+          if (i!=discountAmt){
+            console.log("i=" + i);
+            document.getElementById("button" + i).disabled = false;
+          }
+        }
 
 				//get a nice decimal for dividing later (and eliminate div. by 0)
 				if (discountAmt==0){
@@ -342,9 +386,6 @@
 					console.log(".75 is the divisor");
 				}
 			}
-
-			//Run the calculate function on button press (mainProcedure)
-			document.getElementById('calculateButton').onclick = calculationProcedure;
 		</script>
 	</body>
 </html>
