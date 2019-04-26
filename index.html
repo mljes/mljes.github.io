@@ -16,53 +16,10 @@
                 10. August 2017  - created!
         -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <style>
-			input {
-				font-style: italic;
-				min-height: 10%;
-			}
 
-			body {
-				font-family: "Calibri";
-			}
-
-			.row-m-t{
-				margin-top : .2%;
-			}
-
-			body {
-				margin: 0;
-				background: url("memphis-colorful.png")
-				repeat;
-			}
-
-			#resultBox {
-				display: none;
-			}
-
-			.btn-primary-salmon {
-			  color: #fff;
-			  background-color: #ff7583;
-			  border-color: #ff7583;
-			}
-
-			.btn-primary-salmon:hover {
-			  color: #fff;
-			  background-color: #ff3B4f;
-			  border-color: #ff3B4f;
-			}
-
-			@font-face {
-				font-family: "Priscillia";
-				src: url("PriscilliaScript.otf"),
-				url('PriscilliaScript.woff') format('woff'),
-				url('PriscilliaScript.ttf')  format('truetype'),
-				url('PriscilliaScript.svg#PriscilliaScript') format('svg');
-			}
-		</style>
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="styles.css">
 		<!-- jQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -71,7 +28,6 @@
 	</head>
 
 	<body>
-<!--		<div class="container"> -->
 			<!--** TITLE **-->
 			<div class="text-center">
 				<h4>&nbsp;</h4>
@@ -95,16 +51,16 @@
         <div class="col-sm-10 col-lg">
           <div class="btn-group btn-group-justified" role="group">
             <div class="btn-group" role="group">
-              <button type="button" class="btn btn-primary" id="upickType4" onclick="setUpickType(4)">UPick 4</button>
+              <button type="button" class="btn btn-primary-salmon btn-primary-salmon:hover" id="upickType4" onclick="setUpickType(4)">UPick 4</button>
             </div>
             <div class="btn-group" role="group">
-              <button type="button" class="btn btn-primary" id="upickType6" onclick = "setUpickType(6)">UPick 6</button>
+              <button type="button" class="btn btn-primary-salmon btn-primary-salmon:hover" id="upickType6" onclick = "setUpickType(6)">UPick 6</button>
             </div>
             <div class="btn-group" role="group">
-              <button type="button" class="btn btn-primary" id="upickType8" onclick = "setUpickType(8)">UPick 8</button>
+              <button type="button" class="btn btn-primary-salmon btn-primary-salmon:hover" id="upickType8" onclick = "setUpickType(8)">UPick 8</button>
             </div>
             <div class="btn-group" role="group">
-              <button type="button" class="btn btn-primary" id="upickType10" onclick = "setUpickType(10)">UPick 10</button>
+              <button type="button" class="btn btn-primary-salmon btn-primary-salmon:hover" id="upickType10" onclick = "setUpickType(10)">UPick 10</button>
             </div>
           </div>
         </div>
@@ -160,13 +116,13 @@
 				<div class="col-sm-10 col-lg">
 					<div class="btn-group btn-group-justified" role="group">
             <div class="btn-group" role="group">
-							<button type="button" class="btn btn-primary" id="button0" onclick = "setDiscountAmount(0)">None</button>
+							<button type="button" class="btn btn-primary-salmon btn-primary-salmon:hover" id="button0" onclick = "setDiscountAmount(0)">None</button>
 						</div>
             <div class="btn-group" role="group">
-							<button type="button" class="btn btn-primary" id="button50" onclick="setDiscountAmount(50)">50% off</button>
+							<button type="button" class="btn btn-primary-salmon btn-primary-salmon:hover" id="button50" onclick="setDiscountAmount(50)">50% off</button>
 						</div>
 						<div class="btn-group" role="group">
-							<button type="button" class="btn btn-primary" id="button25" onclick = "setDiscountAmount(25)">25% off</button>
+							<button type="button" class="btn btn-primary-salmon btn-primary-salmon:hover" id="button25" onclick = "setDiscountAmount(25)">25% off</button>
 						</div>
 					</div>
 				</div>
@@ -205,7 +161,6 @@
 				<!--right column-->
 				<div class="col-sm-1 col-lg"></div>
 			</div>
-<!--		</div> -->
 
 		<script>
 			var origPriceType;
@@ -217,10 +172,10 @@
 			var divisor = 0;
 
 			//Sets of price tiers
-			var u4 = {"A":240.00,"B":188.00,"C":108.00};
-			var u6 = {"A":342.00,"B":264.00,"C":156.00};
-			var u8 = {"A":432.00,"B":336.00,"C":192.00};
-			var u10 = {"A":540.00,"B":420.00,"C":240.00}
+			var u4 = {"A":252.00,"B":192.00,"C":128.00};
+			var u6 = {"A":360.00,"B":270.00,"C":180.00};
+			var u8 = {"A":448.00,"B":336.00,"C":224.00};
+			var u10 = {"A":560.00,"B":420.00,"C":280.00}
 
       var prices = new Object();
 			var newPrice;
