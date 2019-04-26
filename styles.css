@@ -41,3 +41,8 @@ body {
   url('PriscilliaScript.ttf')  format('truetype'),
   url('PriscilliaScript.svg#PriscilliaScript') format('svg');
 }
+@font-face {
+  color: #fff;
+  font-family: "Montserrat";
+  src: url('Montserrat-Regular.ttf');
+}
