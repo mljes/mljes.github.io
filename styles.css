@@ -14,6 +14,7 @@ input {
 body {
   color: #fff;
   background-image: url("ep_naturalblack.png");
+  font-family: 'Montserrat', sans-serif;
   repeat;
   background-color: #cccccc;
 }
