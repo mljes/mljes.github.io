@@ -22,6 +22,7 @@ body {
 
 #resultBox {
   display: none;
+  color: #000;
 }
 
 .btn-primary-salmon {
