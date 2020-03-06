@@ -3,3 +3,6 @@
 [master 4dac833] Scripted update 0
  2 files changed, 3 insertions(+), 4 deletions(-)
  create mode 100644 upgradermustdie_log
+[master b7c6071] Scripted update
+ 2 files changed, 4 insertions(+), 366 deletions(-)
+ rewrite index.html (99%)
