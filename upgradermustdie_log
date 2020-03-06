@@ -1,2 +1,5 @@
 [master 1ca1d79] Scripted update
  1 file changed, 1 insertion(+)
+[master 4dac833] Scripted update 0
+ 2 files changed, 3 insertions(+), 4 deletions(-)
+ create mode 100644 upgradermustdie_log
