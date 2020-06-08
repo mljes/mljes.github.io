@@ -1,7 +1,7 @@
 var request = new XMLHttpRequest();
 
 //localhost
-request.open('GET', 'http://54.144.197.204:5000/passwordplease');
+request.open('GET', 'https://54.144.197.204:5000/passwordplease');
 
 request.onload = function() {
   var data = this.response;
