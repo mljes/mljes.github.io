@@ -1,16 +1,9 @@
-const axios = require('axios')
-
-// "https://54.144.197.204:5000/"
-const getPassword = async () => {
-  try {
-    return await axios.get("https://54.144.197.204:5000/passwordplease")
-  }
-  catch (error) {
-    console.error(error)
-  }
+const get_password = async () => {
+  const response = await fetch("https://54.144.197.204:5000/passwordplease")
+  console.log(response)
 }
 
-console.log(getPassword())
+get_password()
 
 /*
 //localhost
