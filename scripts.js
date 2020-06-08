@@ -1,16 +1,16 @@
-import axios from 'axios';
-//const axios = require("axios");
-const api = axios.create({ baseURL: "https://54.144.197.204:5000/"});
+const axios = require('axios')
 
-try {
-  const data = await api.get("passwordplease");
-  console.log("HERE IS THE DATA: " + data);
-  var rootDiv = document.getElementById('root');
-  rootDiv.innerHTML = data;
+// "https://54.144.197.204:5000/"
+const getPassword = async () => {
+  try {
+    return await axios.get("https://54.144.197.204:5000/passwordplease")
+  }
+  catch (error) {
+    console.error(error)
+  }
 }
-catch (error) {
-  console.error(error);
-}
+
+console.log(getPassword())
 
 /*
 //localhost
