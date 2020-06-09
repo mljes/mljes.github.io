@@ -1,18 +1,10 @@
-const get_password = async () => {
-  const response = await fetch("https://54.144.197.204:5000/passwordplease")
-  console.log(response)
-}
+var request = new XMLHttpRequest();
 
-get_password()
-
-/*
-//localhost
 request.open('GET', 'https://54.144.197.204:5000/passwordplease');
 
 request.onload = function() {
   var data = this.response;
-
+  console.log("HERE IS THE DATA: " + data);
+  var rootDiv = document.getElementById('root');
+  rootDiv.innerHTML = data;
 }
-
-request.send()
-*/
