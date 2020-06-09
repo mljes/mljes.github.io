@@ -8,3 +8,5 @@ request.onload = function() {
   var rootDiv = document.getElementById('root');
   rootDiv.innerHTML = data;
 }
+
+request.send();
